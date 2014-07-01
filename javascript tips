@@ -1,0 +1,27 @@
+focus and hightline :
+  text
+  function setFocus(ele, start, end){                                                                
+    ele.setSelectionRange(start, end);
+    ele.focus();
+    // div part
+    //t = ele.firstChild;
+    /*if(window.getSelection && document.createRange){
+      var r = document.createRange();
+      var w = window.getSelection();
+      w.removeAllRanges();
+      w.addRange(r);
+    }*/
+  }
+  
+  to iframe, just like the div part
+  function setIframeFocus(iframe){
+     var win = iframe.contentWindow;                                                                
+     var body = win.document.body;   
+     var select = win.getSelection(); 
+     var range = win.document.createRange();
+     
+     body.focus();
+     range.selectNodeContents(body.children[body.childElementCount-1]);
+     select.removeAllRanges();
+     select.addRange(range);
+  }
