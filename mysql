@@ -1,0 +1,3 @@
+查找不重複value
+mysql : use DISTINCT
+php : array_keys(array_flip($value)) faster than array_unique($value)
